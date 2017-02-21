@@ -4,7 +4,7 @@
 			<hr />
 
 			<div>
-			  <form name="myForm">
+			  <form name="period-end-date-form">
 			    <label for="repeatSelect">Period End Date: </label>
 			    <select 
 			         ng-options="week.week for week in $ctrl.weeks" 
@@ -15,31 +15,33 @@
 
 			</div>
 			
-			<table class="site-list">
-				<tr>
-					<th>
-						<button ng-click="$ctrl.sortBy('url')">URL</button> <span
-						class="sortorder" ng-show="orderProp === 'url'"
-						ng-class="{reverse: reverse}"></span>
-					</th>
-					<th>
-						<button ng-click="$ctrl.sortBy('totalVisits')">Total
-							Visits</button> <span class="sortorder"
-						ng-show="orderProp === 'totalVists'" ng-class="{reverse: reverse}"></span>
-					</th>
-					<th>
-						<button ng-click="$ctrl.sortBy('periodEndDate')">Period
-							End Date</button> <span class="sortorder"
-						ng-show="orderProp === 'periodEndDate'"
-						ng-class="{reverse: reverse}"></span>
-					</th>
-				</tr>
-				<tr ng-repeat="site in $ctrl.sites">
-					<td>{{site.url}}</td>
-					<td>{{site.totalVisits}}</td>
-					<td>{{site.periodEndDate}}</td>
-				</tr>
-			</table>
+			<div class="table-responsive">
+	            <table class="table table-hover">
+	                <tr>
+	                    <th>
+	                        <button ng-click="$ctrl.sortBy('url')">URL</button> <span
+	                        class="sortorder" ng-show="$ctrl.orderProp === 'url'"
+	                        ng-class="{reverse: $ctrl.reverse}"></span>
+	                    </th>
+	                    <th>
+	                        <button ng-click="$ctrl.sortBy('totalVisits')">Total
+	                            Visits</button> <span class="sortorder"
+	                        ng-show="$ctrl.orderProp === 'totalVisits'" ng-class="{reverse: $ctrl.reverse}"></span>
+	                    </th>
+	                    <th>
+	                        <button ng-click="$ctrl.sortBy('periodEndDate')">Period
+	                            End Date</button> <span class="sortorder"
+	                        ng-show="$ctrl.orderProp === 'periodEndDate'"
+	                        ng-class="{reverse: $ctrl.reverse}"></span>
+	                    </th>
+	                </tr>
+	                <tr ng-repeat="site in $ctrl.sites">
+	                    <td>{{site.url}}</td>
+	                    <td>{{site.totalVisits}}</td>
+	                    <td>{{site.periodEndDate}}</td>
+	                </tr>
+	            </table>
+			</div>
 
 		</div>
 	</div>
