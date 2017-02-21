@@ -1,0 +1,47 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10">
+			<hr />
+
+			<div>
+			  <form name="myForm">
+			    <label for="repeatSelect">Period End Date: </label>
+			    <select 
+			         ng-options="week.week for week in $ctrl.weeks" 
+			         ng-model="$ctrl.week"
+			         ng-change="$ctrl.update()">
+			    </select>
+			  </form>
+
+			</div>
+			
+			<table class="site-list">
+				<tr>
+					<th>
+						<button ng-click="$ctrl.sortBy('url')">URL</button> <span
+						class="sortorder" ng-show="orderProp === 'url'"
+						ng-class="{reverse: reverse}"></span>
+					</th>
+					<th>
+						<button ng-click="$ctrl.sortBy('totalVisits')">Total
+							Visits</button> <span class="sortorder"
+						ng-show="orderProp === 'totalVists'" ng-class="{reverse: reverse}"></span>
+					</th>
+					<th>
+						<button ng-click="$ctrl.sortBy('periodEndDate')">Period
+							End Date</button> <span class="sortorder"
+						ng-show="orderProp === 'periodEndDate'"
+						ng-class="{reverse: reverse}"></span>
+					</th>
+				</tr>
+				<tr ng-repeat="site in $ctrl.sites">
+					<td>{{site.url}}</td>
+					<td>{{site.totalVisits}}</td>
+					<td>{{site.periodEndDate}}</td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
+</div>
+

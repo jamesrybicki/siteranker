@@ -1,0 +1,29 @@
+{
+  "name": "siteranker-web",
+  "description": "SiteRanker Web App",
+  "version": "1.0",
+  "authors": [
+    "rybicki.james@gmail.com"
+  ],
+  "homepage": "https://github.com/jamesrybicki/siteranker",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/main/webapp/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.x",
+    "angular-animate": "1.6.x",
+    "angular-loader": "1.6.x",
+    "angular-mocks": "1.6.x",
+    "angular-resource": "1.6.x",
+    "angular-route": "1.6.x",
+    "bootstrap": "~3.3.7",
+    "jquery": "~3.1.1"
+  },
+  "main": "src/main/webapp/index.html"
+}

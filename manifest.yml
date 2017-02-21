@@ -1,0 +1,7 @@
+---
+applications:
+  - name: siteranker
+    buildpack: java_buildpack
+    path: modules/siteranker-web/target/siteranker.war
+    services:
+      - mysql

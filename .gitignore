@@ -5,5 +5,7 @@ target/
 *.war
 *.ear
 hs_err_pid*
-node_modules
-
+node_modules/
+.settings/
+phantomjsdriver.log
+siteranker.log

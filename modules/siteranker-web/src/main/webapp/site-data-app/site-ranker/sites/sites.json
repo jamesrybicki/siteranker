@@ -1,0 +1,6 @@
+[
+    {"url":"http://www.google.com","hits":100}, 
+    {"url":"http://www.yahoo.com","hits":5000}, 
+    {"url":"http://www.zebras.com","hits":400},
+    {"url": "http://www.wikipedia.com","hits":10}
+]
