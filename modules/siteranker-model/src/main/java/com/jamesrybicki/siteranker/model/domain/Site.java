@@ -6,15 +6,10 @@ import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(
-        name="site",
-        catalog="siteranker_db"
-)
 public class Site extends BaseEntity implements Serializable {
 	
 	private static final long serialVersionUID = -4050453908905018098L;

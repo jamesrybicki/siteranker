@@ -2,6 +2,8 @@
 applications:
   - name: siteranker
     buildpack: java_buildpack
-    path: modules/siteranker-web/target/siteranker.war
+    path: target/siteranker.war
     services:
       - mysql
+    env:
+      SPRING_PROFILES_ACTIVE: pcf

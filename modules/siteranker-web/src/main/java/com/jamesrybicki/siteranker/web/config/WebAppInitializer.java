@@ -8,8 +8,9 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import com.jamesrybicki.siteranker.core.config.CoreConfig;
 import com.jamesrybicki.siteranker.model.config.ModelConfig;
-import com.jamesrybicki.siteranker.persist.config.PersistenceConfig;
+import com.jamesrybicki.siteranker.persist.config.CloudDataSourceConfig;
 import com.jamesrybicki.siteranker.persist.config.JndiDataSourceConfig;
+import com.jamesrybicki.siteranker.persist.config.PersistenceConfig;
 import com.jamesrybicki.siteranker.persist.config.StandaloneDataSourceConfig;
 
 @Order(1)
@@ -21,6 +22,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 		return new Class<?>[] {
 			AppConfig.class,
 			ModelConfig.class,
+			CloudDataSourceConfig.class,
 			StandaloneDataSourceConfig.class,
 			JndiDataSourceConfig.class,
 			PersistenceConfig.class,
