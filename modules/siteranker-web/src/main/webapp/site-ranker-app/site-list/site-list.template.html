@@ -1,18 +1,26 @@
-
-			<div>
-			  <form name="period-end-date-form">
-			    <label for="repeatSelect">Period End Date: </label>
-			    <select 
-			         ng-options="week.week for week in $ctrl.weeks" 
-			         ng-model="$ctrl.week"
-			         ng-change="$ctrl.update()">
-			    </select>
-			  </form>
-			</div>
-			
-			<p/>
-			
 			<div class="table-responsive">
+	            <div>
+	                <ol class="breadcrumb">
+	                  <li class="active">Home</li>
+	                </ol>
+	            </div>
+	            <p>View the top most visited sites by week.  
+	            Click on any table heading to sort that column either ascending or descending.
+	            </p>
+	
+	            <div>
+	              <form name="period-end-date-form">
+	                <label for="repeatSelect">Period End Date: </label>
+	                <select 
+	                     ng-options="week.endDate for week in $ctrl.weeks" 
+	                     ng-model="$ctrl.week"
+	                     ng-change="$ctrl.update()">
+	                </select>
+	              </form>
+	            </div>
+	            
+	            <p/>
+	            
 	            <table class="table table-hover">
 	                <tr>
 	                    <th>
@@ -33,7 +41,7 @@
 	                    </th>
 	                </tr>
 	                <tr ng-repeat="site in $ctrl.sites">
-	                    <td>{{site.url}}</td>
+	                    <td><a href="#!/sites/{{site.url}}/history">{{site.url}}</a></td>
 	                    <td>{{site.totalVisits}}</td>
 	                    <td>{{site.periodEndDate}}</td>
 	                </tr>

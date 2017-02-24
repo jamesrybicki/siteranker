@@ -1,5 +1,6 @@
 package com.jamesrybicki.siteranker.core.services.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -10,6 +11,7 @@ import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
 
 import com.jamesrybicki.siteranker.core.services.SiteService;
+import com.jamesrybicki.siteranker.model.domain.Period;
 import com.jamesrybicki.siteranker.model.domain.Site;
 import com.jamesrybicki.siteranker.persist.repo.SiteRepository;
 
@@ -40,8 +42,17 @@ public class SiteServiceImpl implements SiteService {
 	}
 
 	@Override
-	public List<Date> listWeeksWithData() {
-		return (List<Date>) siteRepository.findWeeksWithData();
+	public List<Period> listAvailablePeriods() {
+		List<Period> periodsWithData = new ArrayList<>();
+		for (Date periodEndDate : (List<Date>) siteRepository.listDistinctPeriodEndDates()) {
+			periodsWithData.add(new Period(periodEndDate));
+		}
+		return periodsWithData;
+	}
+	
+	@Override
+	public List<Site> listByUrl(String url) {
+		return (List<Site>) siteRepository.findByUrl(url);
 	}
 
 }

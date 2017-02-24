@@ -1,10 +1,10 @@
-// Define the `siteDataApp` module
 (function(angular) {
 	"use strict";
 	angular
-	    .module('siteDataApp', [
+	    .module('siteRankerApp', [
 	    	'ngRoute',
 		    'core',
-		    'siteRanker',
+		    'siteList',
+		    'siteHistory'
 	]);
 })(window.angular);

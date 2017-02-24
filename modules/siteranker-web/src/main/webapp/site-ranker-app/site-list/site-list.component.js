@@ -1,9 +1,9 @@
 (function(angular) {
 	"use strict";
 	angular
-	    .module('siteRanker')
+	    .module('siteRankerApp')
 		.component('siteList', {
-			  templateUrl: 'site-data-app/site-ranker/sites/site-list.template.html',
+			  templateUrl: 'site-ranker-app/site-list/site-list.template.html',
 			  controller: 'SiteListController'
 	});
 	

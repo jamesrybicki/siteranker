@@ -1,6 +1,5 @@
 package com.jamesrybicki.siteranker.web.controllers;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -20,9 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jamesrybicki.siteranker.core.services.SiteService;
+import com.jamesrybicki.siteranker.model.domain.Period;
 import com.jamesrybicki.siteranker.model.domain.Site;
 
 @Controller
@@ -59,30 +57,20 @@ public class SiteController {
 	        return new ResponseEntity<Site>(site, HttpStatus.OK);
 	    }
 	    
-	    @RequestMapping(method = RequestMethod.GET, value = "/weeks")
+	    @RequestMapping(method = RequestMethod.GET, value = "/{siteUrl}/history")
 	    @ResponseStatus(HttpStatus.OK)
 	    @ResponseBody
-	    public String listWeeksWithData() throws JsonProcessingException {
-	    	List<WeekData> weeks = new ArrayList<>();
-	    	List<Date> dates = siteService.listWeeksWithData();
-	    	for (Date d : dates) {
-	    		weeks.add(new WeekData(d));
-	    	}
-	    	ObjectMapper objectMapper = new ObjectMapper();
-	    	return objectMapper.writeValueAsString(weeks);
+	    public List<Site> history(@PathVariable String siteUrl) {
+	        List<Site> sites = siteService.listByUrl(siteUrl);
+	        return sites;
 	    }
 	    
-	    public class WeekData {
-	    	private Date week;
-	    	public WeekData(Date week) {
-	    		this.week = week;
-	    	}
-	    	public Date getweek() {
-	    		return week;
-	    	}
-	    	public void setWeek(Date week) {
-	    		this.week = week;
-	    	}
+	    @RequestMapping(method = RequestMethod.GET, value = "/availablePeriods")
+	    @ResponseStatus(HttpStatus.OK)
+	    @ResponseBody
+	    public List<Period> availablePeriods() {
+	    	List<Period> availablePeriods = siteService.listAvailablePeriods();
+	    	return availablePeriods;
 	    }
-
+	    
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="siteDataApp">
+<html lang="en" ng-app="siteRankerApp">
 <head>
 <meta charset="utf-8">
 <title>SiteRanker</title>
@@ -9,29 +9,26 @@
 <script src="vendor/angular-animate/angular-animate.js"></script>
 <script src="vendor/angular-resource/angular-resource.js"></script>
 <script src="vendor/angular-route/angular-route.js"></script>
-<script src="site-data-app/site-data-app.module.js"></script>
-<script src="site-data-app/site-data-app.config.js"></script>
-<script src="site-data-app/core/core.module.js"></script>
-<script src="site-data-app/core/site/site-core.module.js"></script>
-<script src="site-data-app/site-ranker/site-ranker.module.js"></script>
-<script src="site-data-app/core/site/site-core.service.js"></script>
-<script src="site-data-app/site-ranker/sites/site-list.controller.js"></script>
-<script
-	src="site-data-app/site-ranker/components/site-list.component.js"></script>
+<script src="site-ranker-app/site-ranker-app.module.js"></script>
+<script src="site-ranker-app/site-ranker-app.routes.js"></script>
+<script src="site-ranker-app/core/core.module.js"></script>
+<script src="site-ranker-app/core/site/site-core.module.js"></script>
+<script src="site-ranker-app/core/site/site-core.service.js"></script>
+<script src="site-ranker-app/site-list/site-list.module.js"></script>
+<script src="site-ranker-app/site-list/site-list.controller.js"></script>
+<script src="site-ranker-app/site-list/site-list.component.js"></script>
+<script src="site-ranker-app/site-history/site-history.module.js"></script>
+<script src="site-ranker-app/site-history/site-history.controller.js"></script>
+<script src="site-ranker-app/site-history/site-history.component.js"></script>
 </head>
 <body>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-10">
-			    <hr/>
 				<div class="page-header">
 					<h1>SiteRanker</h1>
-	                <p>View the top most visited sites by week.  
-	                Click on any table heading to sort that column either ascending or descending.
-	                </p>
 				</div>
 				<div ng-view></div>
-
 			</div>
 		</div>
 	</div>

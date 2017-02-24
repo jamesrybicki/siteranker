@@ -1,0 +1,31 @@
+
+			<div class="table-responsive">
+		            <div>
+		                <ol class="breadcrumb">
+		                  <li><a href="#!">Home</a></li>
+                          <li class="active">Site History</li>
+		                </ol>
+		            </div>
+                    <h3>Historical Data: {{$ctrl.siteUrl}}</h3>
+                    <table class="table table-hover">
+                    <tr>
+                        <th>
+                            <button ng-click="$ctrl.sortBy('periodEndDate')">Period End Date</button> <span
+                            class="sortorder" ng-show="$ctrl.orderProp === 'periodEndDate'"
+                            ng-class="{reverse: $ctrl.reverse}"></span>
+                        </th>
+                        <th>
+                            <button ng-click="$ctrl.sortBy('totalVisits')">Total
+                                Visits</button> <span class="sortorder"
+                            ng-show="$ctrl.orderProp === 'totalVisits'" ng-class="{reverse: $ctrl.reverse}"></span>
+                        </th>
+                    </tr>	                
+                    <tr ng-repeat="site in $ctrl.sites">
+	                    <td>{{site.periodEndDate}}</td>
+	                    <td>{{site.totalVisits}}</td>
+	                </tr>
+	            </table>
+			</div>
+
+
+

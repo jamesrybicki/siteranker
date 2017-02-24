@@ -26,7 +26,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
             registry.addResourceHandler("/content/**").addResourceLocations("/content/");
-            registry.addResourceHandler("/site-data-app/**").addResourceLocations("/site-data-app/");
+            registry.addResourceHandler("/site-ranker-app/**").addResourceLocations("/site-ranker-app/");
             registry.addResourceHandler("/vendor/**").addResourceLocations("/vendor/");
 
     }

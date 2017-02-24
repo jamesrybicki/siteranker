@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import org.springframework.data.domain.Slice;
 
+import com.jamesrybicki.siteranker.model.domain.Period;
 import com.jamesrybicki.siteranker.model.domain.Site;
 
 public interface SiteService {
@@ -18,6 +19,8 @@ public interface SiteService {
 	
 	public Slice<Site> listByPeriod(Date periodEndDate, int page, int size);
 
-	public List<Date> listWeeksWithData();
+	public List<Period> listAvailablePeriods();
+	
+	public List<Site> listByUrl(String url);
 	
 }

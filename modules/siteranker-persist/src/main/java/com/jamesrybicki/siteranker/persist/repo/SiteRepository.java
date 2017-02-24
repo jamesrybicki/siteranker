@@ -21,9 +21,9 @@ public interface SiteRepository extends CrudRepository<Site, UUID> {
 	public Slice<Site> findByPeriodEndDate(@Temporal(TemporalType.DATE) Date periodEndDate, Pageable pageable);
 
 	@Query("SELECT DISTINCT periodEndDate FROM Site")
-	public List<Date> findWeeksWithData();
+	public List<Date> listDistinctPeriodEndDates();
 	
-	public Site findByUrl(String url);
+	public List<Site> findByUrl(String url);
 
 	public Site findByUrlAndPeriodEndDate(String url, @Temporal(TemporalType.DATE) Date periodEndDate);
 	

@@ -1,8 +1,7 @@
-// Define the `siteRanker` module
 (function(angular) {
 	"use strict";
 	angular
-		.module('siteRanker', [
+		.module('siteList', [
 			'ngRoute',
 			'siteCore'
 		]);
